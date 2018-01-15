@@ -23,8 +23,8 @@ def main():
     #make whole URL
     url = end_point + '?' + parameter
 
+    result = requests.get(url)
     try:
-        result = requests.get(url)
         data = json.loads(result.text)
     except json.decoder.JSONDecodeError:
         #JSONDecodeError happens if query is incorrect
